@@ -4,6 +4,7 @@ using BlazorServer.Data;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,31 +65,32 @@ app.MapAdditionalIdentityEndpoints();
 using(var scope = app.Services.CreateScope())
 {
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+  
     var roles = new[] { "Admin", "Employee", "User" };
     foreach (var role in roles)
     {
         if(!await roleManager.RoleExistsAsync(role))
             await roleManager.CreateAsync(new IdentityRole(role));
-
     }
+    
 }
-
 using (var scope = app.Services.CreateScope())
 {
-    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
     string email = "admin@admin.com";
-    string password = "@dmin!23";
+    string password = "@Dmin!23";
     if (await userManager.FindByEmailAsync(email) == null)
     {
-        var user = new IdentityUser();
+        var user = new ApplicationUser();
         user.Email = email;
         user.UserName = email;
         user.EmailConfirmed = true;
 
-        await userManager.CreateAsync(user,password);
+       var result = await userManager.CreateAsync(user, password);
 
         await userManager.AddToRoleAsync(user, "Admin");
     }
 }
 
-app.Run();
+
+    app.Run();

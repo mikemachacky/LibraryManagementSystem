@@ -10,7 +10,9 @@ main[b-yr9wyj2frh] {
 }
 
 .sidebar[b-yr9wyj2frh] {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    /*    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);*/
+    background-color: #0d6efd;
+/*    background-size: cover;*/
 }
 
 .top-row[b-yr9wyj2frh] {
@@ -111,6 +113,7 @@ main[b-yr9wyj2frh] {
 
 .navbar-toggler:checked[b-yzmoccrxyx] {
     background-color: rgba(255, 255, 255, 0.5);
+  
 }
 
 .top-row[b-yzmoccrxyx] {
@@ -167,6 +170,7 @@ main[b-yr9wyj2frh] {
 .nav-item[b-yzmoccrxyx] {
     font-size: 0.9rem;
     padding-bottom: 0.5rem;
+
 }
 
     .nav-item:first-of-type[b-yzmoccrxyx] {
@@ -187,6 +191,7 @@ main[b-yr9wyj2frh] {
         align-items: center;
         line-height: 3rem;
         width: 100%;
+      
     }
 
 .nav-item[b-yzmoccrxyx]  a.active {
