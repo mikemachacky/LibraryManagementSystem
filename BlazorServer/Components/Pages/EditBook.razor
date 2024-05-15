@@ -1,0 +1,63 @@
+﻿@page "/edit-book"
+@page "/edit-book/{id:int}"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Policy = "AdminOnly")]
+<h3>EditBook</h3>
+<div class="row">
+<EditForm Model="@book" OnSubmit="HandleSubmit">
+    <div class="row col-md-4">
+            <label>Title</label>
+            <InputText @bind-Value="book.Title"></InputText>
+    </div>
+  
+    <div class="row col-md-4">
+            <label>Author</label>
+            <InputText @bind-Value="book.Author"></InputText>
+    </div>
+    
+    <div class="row col-md-4">
+            <label>ISBN</label>
+            <InputText @bind-Value="book.ISBN"></InputText>
+    </div>
+    
+    <div class="row col-md-4">
+            <label>Genre</label>
+            <InputText @bind-Value="book.Genre"></InputText>
+    </div>
+   
+    <div class="row col-md-4">
+            <label>Publisher</label>
+            <InputText @bind-Value="book.Publisher"></InputText>
+    </div>
+    
+    <div class="row col-md-4">
+            <label>Publish Date</label>
+            <InputDate @bind-Value="book.PublishDate"></InputDate>
+    </div>
+
+    <div class="row col-md-4">
+            <label>Quantity Available</label>
+            <InputNumber @bind-Value="book.QuantityAvailable"></InputNumber>
+    </div>
+
+   <div class="row col-md-4">
+            <label>Description</label>
+            <InputText @bind-Value="book.Description"></InputText>
+   </div>
+
+    <div class="row col-md-4 mt-3 ">
+
+            <button class="btn btn-primary " type="submit">Save</button>
+    </div>
+
+</EditForm>
+</div>
+@code {
+    [Parameter]
+    public int Id { get; set; }
+    Book book = new();
+    async Task HandleSubmit()
+    {
+        
+    }
+}
