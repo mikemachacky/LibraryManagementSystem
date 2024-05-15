@@ -1,10 +1,15 @@
 ﻿@page "/edit-book"
 @page "/edit-book/{id:int}"
 @using Microsoft.AspNetCore.Authorization
+
 @attribute [Authorize(Policy = "AdminOnly")]
-<h3>EditBook</h3>
-<div class="row">
-<EditForm Model="@book" OnSubmit="HandleSubmit">
+
+@inject IBookService BookService
+
+
+<div class="row col-md-6 offset-3">
+    <h3>EditBook</h3>
+<EditForm Model="@book" OnSubmit="HandleSubmit" FormName="editBook">
     <div class="row col-md-4">
             <label>Title</label>
             <InputText @bind-Value="book.Title"></InputText>
@@ -55,9 +60,10 @@
 @code {
     [Parameter]
     public int Id { get; set; }
-    Book book = new();
+    [SupplyParameterFromForm]
+    public Book book { get; set; } = new();
     async Task HandleSubmit()
     {
-        
+        await BookService.AddBook(book);
     }
 }
