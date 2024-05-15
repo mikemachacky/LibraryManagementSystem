@@ -3,12 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\data\\migrations\\20240515060411_tablesset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:data\\migrations\\20240515060411_tablesset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\model\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:model\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\model\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:model\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\model\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:model\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\model\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:model\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\model\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:model\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\model\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:model\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\pages\\auth.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\pages\\auth.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,12 +63,12 @@
       "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\account\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\account\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\pages\\adminpanel.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -38,89 +82,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Register.razor",
-              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Register.razor",
-              "RelativeDocumentMoniker": "Components\\Account\\Pages\\Register.razor",
-              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Register.razor",
-              "RelativeToolTip": "Components\\Account\\Pages\\Register.razor",
-              "ViewState": "AQIAADYAAAAAAAAAAAAAAC0AAAAKAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T18:08:41.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Login.razor",
-              "RelativeDocumentMoniker": "Components\\Account\\Pages\\Login.razor",
-              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Login.razor",
-              "RelativeToolTip": "Components\\Account\\Pages\\Login.razor",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAA8AAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T18:07:22.62Z",
+              "Title": "20240515060411_TablesSet.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Data\\Migrations\\20240515060411_TablesSet.cs",
+              "RelativeDocumentMoniker": "Data\\Migrations\\20240515060411_TablesSet.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Data\\Migrations\\20240515060411_TablesSet.cs",
+              "RelativeToolTip": "Data\\Migrations\\20240515060411_TablesSet.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T06:04:12.005Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T18:02:02.701Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "App.razor",
-              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\App.razor",
-              "RelativeDocumentMoniker": "Components\\App.razor",
-              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\App.razor",
-              "RelativeToolTip": "Components\\App.razor",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAABuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T17:51:49.909Z",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAwwA0AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:58:51.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABAAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T17:50:30.235Z",
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Review.cs",
+              "RelativeDocumentMoniker": "Model\\Review.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Review.cs",
+              "RelativeToolTip": "Model\\Review.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAmwAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:57:09.602Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AdminPanel.razor",
-              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel.razor",
-              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel.razor",
-              "RelativeToolTip": "Components\\Pages\\AdminPanel.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-13T17:50:08.514Z",
+              "DocumentIndex": 3,
+              "Title": "Transaction.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Transaction.cs",
+              "RelativeDocumentMoniker": "Model\\Transaction.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Transaction.cs",
+              "RelativeToolTip": "Model\\Transaction.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAmwBkAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:56:40.868Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Publisher.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Publisher.cs",
+              "RelativeDocumentMoniker": "Model\\Publisher.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Publisher.cs",
+              "RelativeToolTip": "Model\\Publisher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:56:16.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Genre.cs",
+              "RelativeDocumentMoniker": "Model\\Genre.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Genre.cs",
+              "RelativeToolTip": "Model\\Genre.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:55:56.165Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Author.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Author.cs",
+              "RelativeDocumentMoniker": "Model\\Author.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Author.cs",
+              "RelativeToolTip": "Model\\Author.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwBEAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:55:33.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Book.cs",
+              "RelativeDocumentMoniker": "Model\\Book.cs",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Book.cs",
+              "RelativeToolTip": "Model\\Book.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAuwCQAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T05:53:57.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Auth.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\Auth.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Auth.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\Auth.razor",
+              "RelativeToolTip": "Components\\Pages\\Auth.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T18:38:38.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor.css",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeToolTip": "Components\\Layout\\MainLayout.razor.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-13T18:28:43.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NavMenu.razor.css",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor.css",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor.css",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor.css",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAF0AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-05-13T18:24:16.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "Components\\Account\\Pages\\Register.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Register.razor",
+              "RelativeToolTip": "Components\\Account\\Pages\\Register.razor",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T18:08:41.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Account\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Account\\Pages\\Login.razor",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAEUAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T18:07:22.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Components\\App.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\App.razor",
+              "RelativeToolTip": "Components\\App.razor",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T17:51:49.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -128,8 +271,43 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAEoAAAAAAAAAAAASwFAAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:26:05.913Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T15:26:05.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T18:02:02.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T17:50:30.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AdminPanel.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel.razor",
+              "RelativeToolTip": "Components\\Pages\\AdminPanel.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-13T17:50:08.514Z"
             }
           ]
         }
