@@ -12,20 +12,17 @@ namespace BlazorServer.Model
         public string Title { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        public string Author { get; set; }
+        public string AuthorID { get; set; }
 
         [Required]
         [MaxLength(20)]
         public string ISBN { get; set; }
 
         [Required]
-        [MaxLength(50)]
-        public string Genre { get; set; }
+        public string GenreID { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        public string Publisher { get; set; }
+        public string PublisherID { get; set; }
 
         [Required]
         public DateTime PublishDate { get; set; }

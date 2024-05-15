@@ -4,44 +4,24 @@
 @attribute [Authorize(Policy = "AdminOnly")]
 @inject IBookService BookService
 @inject NavigationManager NavigationManager
-<AuthorizeView Roles="Admin">
+
     <h3>AdminPanel</h3>
-
-    @if (books == null)
+    <div>
+        <button @onclick="@(() => SwitchComponent("books"))">Books</button>
+    </div>
+    @switch (@CurrentComponent)
     {
-        <span>Loading...</span>
+    case "books":
+            <Books/>
+        break;
+    default: break;
     }
-    else if (books.Count == 0)
-    {
-        <span>No books found.</span>
-    }
-    else
-    {
-        <table>
-
-
-            @foreach (var book in books)
-            {
-                <tr>
-                    <td>@book.Title</td>
-                    <td>@book.Genre</td>
-                </tr>
-
-            }
-        </table>
-    }
-    <button @onclick="CreateBook">Create book</button>
-
-</AuthorizeView>
+   
 
 @code {
-    List<Book>? books = null;
-    protected override async Task OnInitializedAsync()
+    public string CurrentComponent {get;set;} = "books";
+    public void SwitchComponent(string component)
     {
-        books = await BookService.GetAllBooks();
-    }
-    private void CreateBook(MouseEventArgs e)
-    {
-        NavigationManager.NavigateTo("/edit-book/");
+        CurrentComponent = component;
     }
 }
