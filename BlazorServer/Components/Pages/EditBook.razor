@@ -1,7 +1,7 @@
 ﻿@page "/edit-book"
 @page "/edit-book/{id:int}"
 @using Microsoft.AspNetCore.Authorization
-
+@using BlazorServer.Model
 @attribute [Authorize(Policy = "AdminOnly")]
 
 @inject IBookService BookService
@@ -17,7 +17,7 @@
   
     <div class="row">
             <label>Author</label>
-            <InputText @bind-Value="book.Author"></InputText>
+            <InputText @bind-Value="author.Name"></InputText>
     </div>
     
     <div class="row">
@@ -27,12 +27,12 @@
     
     <div class="row">
             <label>Genre</label>
-            <InputText @bind-Value="book.Genre"></InputText>
+            <InputText @bind-Value="genre.Name"></InputText>
     </div>
    
     <div class="row">
             <label>Publisher</label>
-            <InputText @bind-Value="book.Publisher"></InputText>
+            <InputText @bind-Value="publisher.Name"></InputText>
     </div>
     
     <div class="row">
@@ -62,6 +62,12 @@
     public int Id { get; set; }
     [SupplyParameterFromForm]
     public Book book { get; set; } = new();
+    [SupplyParameterFromForm]
+    public Author author { get; set; } = new();
+    [SupplyParameterFromForm]
+    public Genre genre { get; set; } = new();
+    [SupplyParameterFromForm]
+    public Publisher publisher { get; set; } = new();
     async Task HandleSubmit()
     {
         await BookService.AddBook(book);
