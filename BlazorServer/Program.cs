@@ -1,6 +1,7 @@
 using BlazorServer.Components;
 using BlazorServer.Components.Account;
 using BlazorServer.Data;
+using BlazorServer.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
+builder.Services.AddScoped<IBookService, BookService>();
 
 builder.Services.AddAuthentication(options =>
     {

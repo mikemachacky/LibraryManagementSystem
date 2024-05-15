@@ -1,6 +1,35 @@
 ﻿@page "/adminpanel"
+@inject IBookService BookService
 <h3>AdminPanel</h3>
 
-@code {
+@if(books == null)
+{
+    <span>Loading...</span>
+}
+else if(books.Count == 0)
+{
+    <span>No books found.</span>
+}
+else
+{
+    <table>
 
+  
+    @foreach (var book in books)
+    {
+        <tr>
+                <td>@book.Title</td>
+                <td>@book.Genre</td>
+        </tr>
+       
+    }
+    </table>
+}
+
+@code {
+    List<Book>? books = null;
+    protected override async Task OnInitializedAsync()
+    {
+        books = await BookService.GetAllBooks();
+    }
 }
