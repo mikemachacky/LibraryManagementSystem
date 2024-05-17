@@ -7,96 +7,115 @@
 @inject IEntityService<Book> BookService
 @inject IEntityService<Author> AuthorService
 @inject IEntityService<Genre> GenreService
+@inject IEntityService<Publisher> PublisherService
 
 
 <div class="row col-md-6 offset-3">
-    <h3>Add Book</h3>
-<EditForm Model="@book" OnSubmit="HandleSubmit" FormName="editBook">
-    <div class="row">
-            <label>Title</label>
-            <InputText @bind-Value="book.Title"></InputText>
-    </div>
-  
-    <div class="row">
-            <label>Author</label>
-            <InputText @bind-Value="author.Name"></InputText>
-    </div>
-    
-    <div class="row">
-            <label>ISBN</label>
-            <InputText @bind-Value="book.ISBN"></InputText>
-    </div>
-    
-    <div class="row">
-            <label>Genre</label>
-           
-                @if(Genres.Count > 0)
+    <h3>Add New Book</h3>
+<EditForm Model="@newBook" OnSubmit="HandleSubmit" FormName="editBook">
+     
+
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" id="title" @bind="newBook.Title" required />
+            </div>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <select class="form-control" id="author" @bind="newBook.AuthorID" required>
+                    <option value="">-- Select Author --</option>
+                @if (authors.Count > 0)
                 {
-                <InputSelect @bind-Value="@Genres">
-                    @foreach (var genre in Genres)
+                    @foreach (var author in authors)
                     {
-                        <option value="@genre.GenreID">@genre.Name</option>
+                        <option value="@author.AuthorID">
+                            @author.Name
+                        </option>
                     }
-                </InputSelect>
                 }
                 else
                 {
-                    <label>No genres found.</label>
+                    <label>No Authors found.</label>
                 }
-            
-    </div>
-   
-    <div class="row">
-            <label>Publisher</label>
-            <InputText @bind-Value="publisher.Name"></InputText>
-    </div>
-    
-    <div class="row">
-            <label>Publish Date</label>
-            <InputDate @bind-Value="book.PublishDate"></InputDate>
-    </div>
-
-    <div class="row">
-            <label>Quantity Available</label>
-            <InputNumber @bind-Value="book.QuantityAvailable"></InputNumber>
-    </div>
-
-   <div class="row">
-            <label>Description</label>
-            <InputText @bind-Value="book.Description"></InputText>
-   </div>
-
-    <div class="row mt-3 ">
-
-            <button class="btn btn-primary " type="submit">Save</button>
-    </div>
-
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <select class="form-control" id="genre" @bind="newBook.GenreID" required>
+                    <option value="">-- Select Genre --</option>
+                @if (genres.Count > 0)
+                {
+                    @foreach (var genre in genres)
+                    {
+                        <option value="@genre.GenreID">
+                            @genre.Name
+                        </option>
+                    }
+                }
+                else
+                {
+                    <label>No Genres found</label>
+                }
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="publisher">Publisher:</label>
+                <select class="form-control" id="publisher" @bind="newBook.PublisherID" required>
+                    <option value="">-- Select Publisher --</option>
+                @if (publishers.Count > 0)
+                {
+                    @foreach (var publisher in publishers)
+                    {
+                        <option value="@publisher.PublisherID">
+                            @publisher.Name
+                        </option>
+                    }
+                }
+                else
+                {
+                    <label>No publishers found.</label>
+                }
+                
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="isbn">ISBN:</label>
+                <input type="text" class="form-control" id="isbn" @bind="newBook.ISBN" required />
+            </div>
+            <div class="form-group">
+                <label for="publishDate">Publish Date:</label>
+                <input type="date" class="form-control" id="publishDate" @bind="newBook.PublishDate" required />
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity Available:</label>
+                <input type="number" class="form-control" id="quantity" @bind="newBook.QuantityAvailable" required />
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="description" @bind="newBook.Description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Book</button>
 </EditForm>
 </div>
 @code {
     [Parameter]
     public int Id { get; set; }
 
-    [SupplyParameterFromForm]
-    public Book book { get; set; } = new();
+    private Book newBook = new Book();
+    private List<Author> authors = new();
+    private List<Genre> genres = new();
+    private List<Publisher> publishers = new();
 
-    [SupplyParameterFromForm]
-    public Author author { get; set; } = new();
-
-    [SupplyParameterFromForm]
-    public Genre genre { get; set; } = new();
-
-    [SupplyParameterFromForm]
-    public Publisher publisher { get; set; } = new();
-
-    public List<Genre> Genres { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
-        Genres = await GenreService.GetAll();
+        authors = await AuthorService.GetAll();
+        genres = await GenreService.GetAll();
+        publishers = await PublisherService.GetAll();
     }
     async Task HandleSubmit()
     {
-        await BookService.Add(book);
+        await BookService.Add(newBook);
     }
 }
