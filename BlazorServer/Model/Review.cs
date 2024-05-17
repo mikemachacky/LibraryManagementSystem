@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BlazorServer.Data;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BlazorServer.Model
 {
@@ -9,9 +11,13 @@ namespace BlazorServer.Model
 
         [Required]
         public int UserID { get; set; }
+        [ForeignKey("Id")]
+        public ApplicationUser User { get; set; } // Navigation property for User
 
         [Required]
         public int BookID { get; set; }
+        [ForeignKey("BookID")]
+        public Book Book { get; set; } // Navigation property for Book
 
         [Required]
         public int Rating { get; set; }
