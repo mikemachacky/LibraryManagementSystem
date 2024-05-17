@@ -4,7 +4,9 @@
 @using BlazorServer.Model
 @attribute [Authorize(Policy = "AdminOnly")]
 
-@inject IBookService BookService
+@inject IEntityService<Book> BookService
+@inject IEntityService<Author> AuthorService
+@inject IEntityService<Genre> GenreService
 
 
 <div class="row col-md-6 offset-3">
@@ -27,7 +29,21 @@
     
     <div class="row">
             <label>Genre</label>
-            <InputText @bind-Value="genre.Name"></InputText>
+           
+                @if(Genres.Count > 0)
+                {
+                <InputSelect @bind-Value="@Genres">
+                    @foreach (var genre in Genres)
+                    {
+                        <option value="@genre.GenreID">@genre.Name</option>
+                    }
+                </InputSelect>
+                }
+                else
+                {
+                    <label>No genres found.</label>
+                }
+            
     </div>
    
     <div class="row">
@@ -60,16 +76,27 @@
 @code {
     [Parameter]
     public int Id { get; set; }
+
     [SupplyParameterFromForm]
     public Book book { get; set; } = new();
+
     [SupplyParameterFromForm]
     public Author author { get; set; } = new();
+
     [SupplyParameterFromForm]
     public Genre genre { get; set; } = new();
+
     [SupplyParameterFromForm]
     public Publisher publisher { get; set; } = new();
+
+    public List<Genre> Genres { get; set; } = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Genres = await GenreService.GetAll();
+    }
     async Task HandleSubmit()
     {
-        await BookService.AddBook(book);
+        await BookService.Add(book);
     }
 }

@@ -17,8 +17,7 @@ builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
-builder.Services.AddScoped<IBookService, BookService>();
-builder.Services.AddScoped<IAuthorService, AuthorService>();
+builder.Services.AddScoped(typeof(IEntityService<>), typeof(EntityService<>));
 
 builder.Services.AddAuthentication(options =>
     {

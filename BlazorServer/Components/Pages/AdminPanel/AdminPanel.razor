@@ -2,17 +2,21 @@
 @using Microsoft.AspNetCore.Authorization
 @rendermode InteractiveServer
 @attribute [Authorize(Policy = "AdminOnly")]
-@inject IBookService BookService
+
 @inject NavigationManager NavigationManager
 
     <h3>AdminPanel</h3>
     <div>
-        <button @onclick="@(() => SwitchComponent("books"))">Books</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("books"))">Books</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("genres"))">Genres</button>
     </div>
     @switch (@CurrentComponent)
     {
     case "books":
             <Books/>
+        break;
+    case "genres":
+        <Books />
         break;
     default: break;
     }
