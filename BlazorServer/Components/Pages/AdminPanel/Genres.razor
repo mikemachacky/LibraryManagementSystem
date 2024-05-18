@@ -1,5 +1,31 @@
-﻿<h3>Genres</h3>
+﻿@page "/genres"
+@using BlazorServer.Model
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Policy = "AdminOnly")]
+@rendermode InteractiveServer
+@inject IEntityService<Genre> GenreService
+<h3>Genres</h3>
+@if (GenreList.Count > 0)
+{
+    <table class="table">
+    @foreach (var genre in GenreList)
+    {
+        <tr>
+                <td>@genre.Name</td>
+                <td><button class="btn btn-primary"><i class="bi bi-pencil-square"></i></button></td>
+        </tr>
+    }
+    </table>
+}
+else
+{
+    <label>No genres found.</label>
+}
 
 @code {
-
+    public List<Genre> GenreList { get; set; } = new();
+    protected override async Task OnInitializedAsync()
+    {
+        GenreList = await GenreService.GetAll();
+    }
 }

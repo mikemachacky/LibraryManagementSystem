@@ -3,7 +3,7 @@
 @using Microsoft.AspNetCore.Authorization
 @using BlazorServer.Model
 @attribute [Authorize(Policy = "AdminOnly")]
-
+@rendermode InteractiveServer
 @inject IEntityService<Book> BookService
 @inject IEntityService<Author> AuthorService
 @inject IEntityService<Genre> GenreService
