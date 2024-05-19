@@ -25,10 +25,11 @@
 
             @foreach (var book in books)
             {
-                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                    <div class="col-md-4 col-sm-10 offset-sm-1 mb-4 d-flex align-items-stretch ">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">@book.Title</h5>
+                            <h6 class="card-subtitle mb-2">@book.Author.Name</h6>
                             <h6 class="card-subtitle mb-2 text-muted">Author ID: @book.AuthorID</h6>
                             <p class="card-text">
                                 <strong>ISBN:</strong> @book.ISBN<br />
@@ -40,7 +41,11 @@
                                 <strong>Quantity Available:</strong> @book.QuantityAvailable<br />
                                 <strong>Description:</strong> @book.Description
                             </p>
-                            <EditBookButton Id="@book.BookID"/>
+                                <div class="container p-0 m-0">
+                                    <EditBookButton Id="@book.BookID" />
+                                    <RemoveBookButton Id="@book.BookID" />
+                                </div>
+                           
                         </div>
                     </div>
                 </div>

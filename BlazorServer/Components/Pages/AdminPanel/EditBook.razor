@@ -10,8 +10,9 @@
 @inject IEntityService<Genre> GenreService
 @inject IEntityService<Publisher> PublisherService
 
-
+<button class="btn btn-secondary " @onclick="GoBack"><i class="bi bi-arrow-left"></i></button>
 <div class="row col-md-6 offset-3">
+ 
     <h3>Add New Book</h3>
 <EditForm Model="@newBook" OnSubmit="HandleSubmit" FormName="editBook">
      
@@ -123,6 +124,10 @@
             await BookService.Add(newBook);
         else
             await BookService.EditById(Id, newBook);
+        NavigationManager.NavigateTo("/adminpanel");
+    }
+    void GoBack()
+    {
         NavigationManager.NavigateTo("/adminpanel");
     }
 }

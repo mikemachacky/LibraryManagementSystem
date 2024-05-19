@@ -54,11 +54,17 @@ namespace BlazorServer.Services
             return await _appDbContext.Set<T>().FindAsync(id);
         }
 
-        public async Task<T> Remove(T entity)
+        public async Task<bool> Remove(int id)
         {
-            _appDbContext.Set<T>().Remove(entity);
-            await _appDbContext.SaveChangesAsync();
-            return entity;
+            var selected = await _appDbContext.Set<T>().FindAsync(id);
+            if (selected != null)
+            {
+                _appDbContext.Set<T>().Remove(selected);
+                await _appDbContext.SaveChangesAsync();
+
+                return _appDbContext.Set<T>().Find(id) == null;
+            }
+            return false;
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿@inject IEntityService<Book> BookService
+@inject NavigationManager NavigationManager
+<button class="btn btn-danger" @onclick="() =>Remove()">Remove</button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; } 
+
+    private async Task Remove()
+    {
+        try
+        {
+            if (Id > 0)
+            {
+                await BookService.Remove(Id);
+                NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+            }
+          
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error removing book: {ex.Message}");
+        }
+    }
+}

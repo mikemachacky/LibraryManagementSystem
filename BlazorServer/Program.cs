@@ -1,6 +1,7 @@
 using BlazorServer.Components;
 using BlazorServer.Components.Account;
 using BlazorServer.Data;
+using BlazorServer.Model;
 using BlazorServer.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -18,6 +19,7 @@ builder.Services.AddScoped<IdentityUserAccessor>();
 builder.Services.AddScoped<IdentityRedirectManager>();
 builder.Services.AddScoped<AuthenticationStateProvider, IdentityRevalidatingAuthenticationStateProvider>();
 builder.Services.AddScoped(typeof(IEntityService<>), typeof(EntityService<>));
+
 
 builder.Services.AddAuthentication(options =>
     {
