@@ -3,7 +3,8 @@
 <button class="btn btn-primary" @onclick="Edit">Edit</button>
 
 @code {
-    public string Id { get; set; }
+    [Parameter]
+    public int Id { get; set; }
     void Edit()
     {
         NavigationManager.NavigateTo($"/edit-book/{Id}");

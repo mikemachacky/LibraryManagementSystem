@@ -20,18 +20,38 @@ namespace BlazorServer.Services
             return entity;
         }
 
+        public async Task<T> EditById(int id, object obj)
+        {
+            var entity = await _appDbContext.Set<T>().FindAsync(id);
+            if (entity == null)
+            {
+                throw new ArgumentException($"Entity with id {id} not found");
+            }
+
+            _appDbContext.Entry(entity).CurrentValues.SetValues(obj);
+
+            await _appDbContext.SaveChangesAsync();
+
+            return entity;
+        }
+
         public async Task<List<T>> GetAll()
         {
                 if (typeof(T) == typeof(Book))
                 {
                     return await _appDbContext.Set<T>()
-                       // .Include("Author")
-                       // .Include("Genre")
-                       // .Include("Publisher")
+                       .Include("Author")
+                       .Include("Genre")
+                       .Include("Publisher")
                         .ToListAsync();
                 }
 
                 return await _appDbContext.Set<T>().ToListAsync();
+        }
+
+        public async Task<T> GetById(int id)
+        {
+            return await _appDbContext.Set<T>().FindAsync(id);
         }
 
         public async Task<T> Remove(T entity)

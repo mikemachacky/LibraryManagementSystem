@@ -32,13 +32,15 @@
                             <h6 class="card-subtitle mb-2 text-muted">Author ID: @book.AuthorID</h6>
                             <p class="card-text">
                                 <strong>ISBN:</strong> @book.ISBN<br />
-                                <strong>Genre ID:</strong> @book.GenreID<br />
-                                <strong>Publisher ID:</strong> @book.PublisherID<br />
+
+                                    <strong>@book.Genre.Name</strong> <strong class="text-muted">Genre ID:</strong> @book.GenreID<br />
+
+                                    <strong>@book.Publisher.Name</strong> <strong class="text-muted">Publisher ID:</strong> @book.PublisherID<br />
                                 <strong>Publish Date:</strong> @book.PublishDate.ToShortDateString()<br />
                                 <strong>Quantity Available:</strong> @book.QuantityAvailable<br />
                                 <strong>Description:</strong> @book.Description
                             </p>
-                            <EditBookButton/>
+                            <EditBookButton Id="@book.BookID"/>
                         </div>
                     </div>
                 </div>

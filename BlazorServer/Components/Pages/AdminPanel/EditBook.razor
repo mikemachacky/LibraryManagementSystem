@@ -4,6 +4,7 @@
 @using BlazorServer.Model
 @attribute [Authorize(Policy = "AdminOnly")]
 @rendermode InteractiveServer
+@inject NavigationManager NavigationManager
 @inject IEntityService<Book> BookService
 @inject IEntityService<Author> AuthorService
 @inject IEntityService<Genre> GenreService
@@ -95,7 +96,7 @@
                 <label for="description">Description:</label>
                 <textarea class="form-control" id="description" @bind="newBook.Description"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Add Book</button>
+            <button type="submit" class="btn btn-primary">Save</button>
 </EditForm>
 </div>
 @code {
@@ -113,9 +114,15 @@
         authors = await AuthorService.GetAll();
         genres = await GenreService.GetAll();
         publishers = await PublisherService.GetAll();
+        if(Id>0)
+            newBook = await BookService.GetById(Id);
     }
     async Task HandleSubmit()
     {
-        await BookService.Add(newBook);
+        if (Id <= 0)
+            await BookService.Add(newBook);
+        else
+            await BookService.EditById(Id, newBook);
+        NavigationManager.NavigateTo("/adminpanel");
     }
 }
