@@ -218,8 +218,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXFRyYW5zYWN0aW9ucy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/BooksCatalog.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb29rc0NhdGFsb2cucmF6b3I=
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/Catalog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRhbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/Error.razor]
@@ -228,6 +228,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/Pagination.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQYWdpbmF0aW9uLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/SearchBooks.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hCb29rcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Routes.razor]

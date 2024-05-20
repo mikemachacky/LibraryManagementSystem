@@ -1,4 +1,5 @@
-﻿using BlazorServer.Data;
+﻿using BlazorServer.Components.Pages.AdminPanel;
+using BlazorServer.Data;
 using BlazorServer.Model;
 using Microsoft.EntityFrameworkCore;
 
@@ -52,6 +53,11 @@ namespace BlazorServer.Services
         public async Task<T> GetById(int id)
         {
             return await _appDbContext.Set<T>().FindAsync(id);
+        }
+
+        public Task<List<T>> GetPaged(int page, int pageSize)
+        {
+            return _appDbContext.Set<T>().Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
         }
 
         public async Task<bool> Remove(int id)
