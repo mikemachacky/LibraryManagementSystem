@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\pages\\bookscatalog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\pages\\bookscatalog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|c:\\users\\dom\\documents\\github\\librarymanagementsystem\\blazorserver\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{09A065EF-EE98-431E-8862-7384921DF53F}|BlazorServer.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -123,19 +127,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "BooksCatalog.razor",
+              "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\BooksCatalog.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\BooksCatalog.razor",
+              "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\BooksCatalog.razor",
+              "RelativeToolTip": "Components\\Pages\\BooksCatalog.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-20T08:32:26.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
               "ToolTip": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\Home.razor",
               "RelativeToolTip": "Components\\Pages\\Home.razor",
-              "ViewState": "AQIAABAAAAAAAAAAAAAiwB8AAAAGAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAiwAYAAADFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-20T08:15:34.603Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Transactions.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\Transactions.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\Transactions.razor",
@@ -148,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "IEntityService.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Services\\IEntityService.cs",
               "RelativeDocumentMoniker": "Services\\IEntityService.cs",
@@ -161,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "EntityService.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Services\\EntityService.cs",
               "RelativeDocumentMoniker": "Services\\EntityService.cs",
@@ -174,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "AdminPanel.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\AdminPanel.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\AdminPanel.razor",
@@ -187,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Publishers.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\Publishers.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\Publishers.razor",
@@ -200,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
@@ -213,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Reviews.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\Reviews.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\Reviews.razor",
@@ -226,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Transaction.cs",
               "RelativeDocumentMoniker": "Model\\Transaction.cs",
@@ -239,7 +256,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Books.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\Books.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\Books.razor",
@@ -252,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Model\\Review.cs",
               "RelativeDocumentMoniker": "Model\\Review.cs",
@@ -265,7 +282,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "EditBook.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\EditBook.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\EditBook.razor",
@@ -278,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "EditBookButton.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\EditBookButton.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\EditBookButton.razor",
@@ -291,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "CreateGameButton.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\CreateGameButton.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\CreateGameButton.razor",
@@ -304,7 +321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Genres.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\Genres.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\Genres.razor",
@@ -317,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Authors.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Pages\\AdminPanel\\Authors.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\AdminPanel\\Authors.razor",
@@ -330,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "20240519053835_SeedInitialData.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Migrations\\20240519053835_SeedInitialData.cs",
               "RelativeDocumentMoniker": "Migrations\\20240519053835_SeedInitialData.cs",
@@ -342,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
@@ -354,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "20240517161838_UpdatedCreate.cs",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Migrations\\20240517161838_UpdatedCreate.cs",
               "RelativeDocumentMoniker": "Migrations\\20240517161838_UpdatedCreate.cs",
@@ -366,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
@@ -378,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "Components\\Account\\Pages\\Login.razor",
@@ -390,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Lockout.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Lockout.razor",
               "RelativeDocumentMoniker": "Components\\Account\\Pages\\Lockout.razor",
@@ -402,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\_Imports.razor",
               "RelativeDocumentMoniker": "Components\\_Imports.razor",
@@ -414,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "MainLayout.razor.css",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\MainLayout.razor.css",
               "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor.css",
@@ -426,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "NavMenu.razor.css",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Layout\\NavMenu.razor.css",
               "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor.css",
@@ -438,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Register.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\Account\\Pages\\Register.razor",
               "RelativeDocumentMoniker": "Components\\Account\\Pages\\Register.razor",
@@ -450,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "App.razor",
               "DocumentMoniker": "C:\\Users\\Dom\\Documents\\GitHub\\LibraryManagementSystem\\BlazorServer\\Components\\App.razor",
               "RelativeDocumentMoniker": "Components\\App.razor",
