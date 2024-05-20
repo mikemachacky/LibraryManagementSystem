@@ -1,0 +1,85 @@
+﻿@page "/reviews"
+@using BlazorServer.Model
+@inject IEntityService<Review> ReviewService
+@inject IJSRuntime JSRuntime
+
+<div class="container mt-2">
+    <div class="row mb-3">
+      
+        <div class="col-12">
+            <h3 class="mt-3">Reviews</h3>
+        </div>
+    </div>
+    @if (reviews == null)
+    {
+        <div class="row">
+            <div class="col-12">
+                <span>Loading...</span>
+            </div>
+        </div>
+    }
+    else if (reviews.Count == 0)
+    {
+        <div class="row">
+            <div class="col-12">
+                <span>No reviews found.</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var review in reviews)
+            {
+                <div class="col-md-4 col-sm-10 offset-md-0 offset-sm-1 mb-4 d-flex align-items-stretch">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@review.Book.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Reviewer: @review.User.UserName</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">User ID: @review.UserID</h6>
+                            <p class="card-text">
+                                <strong>Rating:</strong> @review.Rating<br />
+                                <strong>Review:</strong> @review.ReviewText<br />
+                                <strong>Review Date:</strong> @review.ReviewDate.ToShortDateString()
+                            </p>
+                            <div class="d-flex justify-content-start">
+                              
+                                <button class="btn btn-danger" @onclick="() => ConfirmRemoveReview(review.ReviewID)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<Review> reviews;
+
+    protected override async Task OnInitializedAsync()
+    {
+        reviews = await ReviewService.GetAll();
+    }
+
+    private async Task RemoveReview(int reviewID)
+    {
+        var success = await ReviewService.Remove(reviewID);
+        if (success)
+        {
+            reviews = await ReviewService.GetAll();
+            StateHasChanged();
+        }
+    }
+
+    private async Task ConfirmRemoveReview(int reviewID)
+    {
+        bool isConfirmed = await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to delete review {reviewID}?");
+        if (isConfirmed)
+        {
+            await RemoveReview(reviewID);
+        }
+    }
+}

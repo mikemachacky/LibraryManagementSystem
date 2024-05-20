@@ -1,7 +1,44 @@
 ﻿@page "/"
 
+@inherits LayoutComponentBase
+
+<style>
+    .library-background {
+        background-image: url('https://images.unsplash.com/photo-1535905557558-afc4877a26fc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        min-height: 500px; /* Adjust the minimum height as needed */
+        position: relative;
+        border-radius: 10px; /* Adding corner radius to the background */
+        overflow: hidden; /* Ensure overflow is hidden to maintain corner radius */
+    }
+
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px; /* Adding corner radius to the overlay */
+    }
+
+    .content {
+        position: relative;
+        z-index: 1;
+    }
+</style>
+
+<div class="container-fluid p-0 library-background">
+    <div class="overlay"></div>
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center content">
+            <h1 class="display-4 text-white mt-5">Welcome to Our Library</h1>
+            <p class="lead text-white mt-4">Prepare to embark on a whimsical journey through the pages of our library!</p>
+            <p class="lead text-white">From thrilling adventures to heartwarming tales, our shelves are brimming with stories waiting to be discovered.</p>
+            <p class="lead text-white">Get ready to lose yourself in the enchanting world of literature!</p>
+            <a href="/catalog" class="btn btn-lg btn-primary mt-4">Start Exploring</a>
+        </div>
+    </div>
+</div>
 <PageTitle>Home</PageTitle>
-
-<h1>Hello, world!</h1>
-
-Welcome to your new app.

@@ -1,0 +1,113 @@
+﻿@page "/transactions"
+@using BlazorServer.Data
+@using BlazorServer.Model
+@inject IEntityService<Transaction> TransactionService
+@inject IJSRuntime JSRuntime
+
+<div class="container mt-2">
+    <div class="row mb-3">
+       
+        <div class="col-12">
+            <h3 class="mt-3">Transactions</h3>
+        </div>
+    </div>
+    @if (transactions == null)
+    {
+        <div class="row">
+            <div class="col-12">
+                <span>Loading...</span>
+            </div>
+        </div>
+    }
+    else if (transactions.Count == 0)
+    {
+        <div class="row">
+            <div class="col-12">
+                <span>No transactions found.</span>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            @foreach (var transaction in transactions)
+            {
+                <div class="col-md-4 col-sm-10 offset-md-0 offset-sm-1 mb-4 d-flex align-items-stretch">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@transaction.Book.Title</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">User: @transaction.User.UserName</h6>
+                            <h6 class="card-subtitle mb-2 text-muted">User ID: @transaction.UserID</h6>
+                            <p class="card-text">
+                                <strong>Transaction Date:</strong> @transaction.TransactionDate.ToShortDateString()<br />
+                                <strong>Due Date:</strong> @transaction.DueDate.ToShortDateString()<br />
+                                <strong>Returned Date:</strong> @(transaction.ReturnedDate.HasValue ? transaction.ReturnedDate.Value.ToShortDateString() : "Not Returned")<br />
+                                <strong>Status:</strong> <span class="badge @GetStatusBadgeClass(transaction.Status)">@transaction.Status</span>
+                            </p>
+                            <div class="d-flex justify-content-start">
+                               
+                                <button class="btn btn-danger" @onclick="() => ConfirmRemoveTransaction(transaction.TransactionID)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<Transaction> transactions;
+
+    protected override async Task OnInitializedAsync()
+    {
+        transactions = await TransactionService.GetAll();
+        transactions = new List<Transaction>
+        {
+            new Transaction
+            {
+                TransactionID = 1,
+                UserID = 1,
+                User = new ApplicationUser { Id = "1", UserName = "JohnDoe" },
+                BookID = 1,
+                Book = new Book { BookID = 1, Title = "Example Book" },
+                TransactionDate = DateTime.Now.AddDays(-10),
+                DueDate = DateTime.Now.AddDays(10),
+                ReturnedDate = null,
+                Status = "Pending"
+            }
+        };
+    }
+
+    private async Task RemoveTransaction(int transactionID)
+    {
+        var success = await TransactionService.Remove(transactionID);
+        if (success)
+        {
+            transactions = await TransactionService.GetAll();
+            StateHasChanged();
+        }
+    }
+
+    private async Task ConfirmRemoveTransaction(int transactionID)
+    {
+        bool isConfirmed = await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to delete transaction {transactionID}?");
+        if (isConfirmed)
+        {
+            await RemoveTransaction(transactionID);
+        }
+    }
+
+    private string GetStatusBadgeClass(string status)
+    {
+        return status switch
+        {
+            "Pending" => "badge bg-warning text-dark",
+            "Completed" => "badge bg-success",
+            "Overdue" => "badge bg-danger",
+            _ => "badge bg-secondary"
+        };
+    }
+}

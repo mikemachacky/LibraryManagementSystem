@@ -1,6 +1,7 @@
 ﻿@inject IEntityService<Book> BookService
+@inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
-<button class="btn btn-danger" @onclick="() =>Remove()">Remove</button>
+<button class="btn btn-danger" @onclick="() =>Remove()"><i class="bi bi-trash"/></button>
 
 @code {
     [Parameter]
@@ -12,8 +13,13 @@
         {
             if (Id > 0)
             {
-                await BookService.Remove(Id);
-                NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+                bool isConfirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete?");
+                if (isConfirmed)
+                {
+                    await BookService.Remove(Id);
+                    NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
+                }
+                
             }
           
         }

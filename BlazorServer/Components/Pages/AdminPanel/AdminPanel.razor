@@ -5,10 +5,13 @@
 
 @inject NavigationManager NavigationManager
 
-    <h3>AdminPanel</h3>
-    <div>
+    <div class="container m-0 p-0 ">
     <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("books"))">Books</button>
     <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("genres"))">Genres</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("authors"))">Authors</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("publishers"))">Publishers</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("rewievs"))">Reviews</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("transactions"))">Transactions</button>
     </div>
     @switch (@CurrentComponent)
     {
@@ -17,6 +20,18 @@
         break;
     case "genres":
             <Genres/>
+        break;
+    case "authors":
+            <Authors />
+        break;
+    case "publishers":
+        <Publishers />
+        break;
+    case "rewievs":
+        <Reviews />
+        break;
+    case "transactions":
+        <Transactions />
         break;
     default: break;
     }
