@@ -50,12 +50,14 @@ namespace BlazorServer.Services
                 return await _appDbContext.Set<T>().ToListAsync();
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T?> GetById(int id)
         {
-            return await _appDbContext.Set<T>().FindAsync(id);
+            var result = await _appDbContext.Set<T>().FindAsync(id);
+
+            return result;
         }
 
-        public async Task<List<T>> GetByUserId(string userId)
+        public async Task<List<T>?> GetByUserId(string userId)
         {
             if (typeof(T) == typeof(Transaction))
             {

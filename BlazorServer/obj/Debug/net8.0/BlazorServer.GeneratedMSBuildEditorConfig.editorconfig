@@ -186,8 +186,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEJvb2tzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/CreateGameButton.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXENyZWF0ZUdhbWVCdXR0b24ucmF6b3I=
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/CreateBookButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXENyZWF0ZUJvb2tCdXR0b24ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/EditBook.razor]

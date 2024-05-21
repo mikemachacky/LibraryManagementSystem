@@ -4,11 +4,11 @@
     {
         Task<T> Add(T entity);
         Task<List<T>> GetAll();
-        Task<T> GetById(int id);
+        Task<T?> GetById(int id);
         Task<T> EditById(int id, object obj);
         Task<bool> Remove(int id);
         Task<List<T>> GetPaged(int page, int pageSize);
-        Task<List<T>> GetByUserId(string userId);
+        Task<List<T>?> GetByUserId(string userId);
     }
 
 }
