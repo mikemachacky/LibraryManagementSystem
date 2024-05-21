@@ -64,21 +64,8 @@
     protected override async Task OnInitializedAsync()
     {
         transactions = await TransactionService.GetAll();
-        transactions = new List<Transaction>
-        {
-            new Transaction
-            {
-                TransactionID = 1,
-                UserID = 1,
-                User = new ApplicationUser { Id = "1", UserName = "JohnDoe" },
-                BookID = 1,
-                Book = new Book { BookID = 1, Title = "Example Book" },
-                TransactionDate = DateTime.Now.AddDays(-10),
-                DueDate = DateTime.Now.AddDays(10),
-                ReturnedDate = null,
-                Status = "Pending"
-            }
-        };
+        transactions = new List<Transaction>();
+       
     }
 
     private async Task RemoveTransaction(int transactionID)

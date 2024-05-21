@@ -10,7 +10,7 @@ namespace BlazorServer.Model
         public int ReviewID { get; set; }
 
         [Required]
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         [ForeignKey("Id")]
         public ApplicationUser User { get; set; } // Navigation property for User
 

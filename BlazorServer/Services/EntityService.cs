@@ -55,6 +55,19 @@ namespace BlazorServer.Services
             return await _appDbContext.Set<T>().FindAsync(id);
         }
 
+        public async Task<List<T>> GetByUserId(string userId)
+        {
+            if (typeof(T) == typeof(Transaction))
+            {
+                return await _appDbContext.Transactions
+                            .Include(b => b.Book)
+                            .Where(b => b.UserID == userId)
+                            .ToListAsync() as List<T>;
+            }
+
+            return null;
+        }
+
         public Task<List<T>> GetPaged(int page, int pageSize)
         {
             return _appDbContext.Set<T>().Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();

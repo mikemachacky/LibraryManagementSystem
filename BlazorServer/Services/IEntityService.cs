@@ -8,6 +8,7 @@
         Task<T> EditById(int id, object obj);
         Task<bool> Remove(int id);
         Task<List<T>> GetPaged(int page, int pageSize);
+        Task<List<T>> GetByUserId(string userId);
     }
 
 }
