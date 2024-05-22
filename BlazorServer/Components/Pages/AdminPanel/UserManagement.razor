@@ -1,0 +1,31 @@
+﻿@page "/usermanagement"
+@using BlazorServer.Data
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<IdentityRole> RoleManager
+@rendermode InteractiveServer
+@attribute [Authorize(Policy = "AdminOnly")]
+<h3>UserManagement</h3>
+@foreach (var user in Users)
+{
+    <label>@user.Email</label> <br>
+}
+<select>
+    @foreach (var role in Roles)
+    {
+        <option>@role.Name</option>
+    }
+</select>
+@code {
+    public List<ApplicationUser> Users { get; set; } = new();
+    public List<IdentityRole> Roles { get; set; } = new();
+    protected override async Task OnInitializedAsync()
+    {
+       Roles = await RoleManager.Roles.ToListAsync();
+       Users = await UserManager.Users.ToListAsync();
+       
+
+    }
+}
