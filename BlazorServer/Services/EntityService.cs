@@ -52,6 +52,16 @@ namespace BlazorServer.Services
 
         public async Task<T?> GetById(int id)
         {
+            if(typeof(T) == typeof(Book))
+            {
+                var book = await _appDbContext.Set<Book>()
+                                    .Include(b => b.Author)
+                                    .Include(b => b.Genre)
+                                    .Include(b => b.Publisher)
+                                    .FirstOrDefaultAsync(b => b.BookID == id);
+
+                return book as T;
+            }
             var result = await _appDbContext.Set<T>().FindAsync(id);
 
             return result;
