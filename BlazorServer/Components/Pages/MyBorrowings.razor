@@ -40,7 +40,9 @@
                             <h5 class="card-title">@transaction.Book.Title</h5>
                             <h6 class="card-subtitle mb-2 text-muted">Borrowed on: @transaction.TransactionDate.ToShortDateString()</h6>
                             <p class="card-text">
-                                <strong>Status:</strong> @transaction.Status<br />
+                                <span class="@GetStatusBadgeClass(transaction.Status)">
+                                    @transaction.Status
+                                </span>
                                 <strong>Due Date:</strong> @transaction.DueDate.ToShortDateString()<br />
                                 @if (transaction.Status == "Overdue")
                                 {
@@ -79,5 +81,17 @@
         {
             // Obsługa braku uwierzytelnionego użytkownika
         }
+
+    }
+
+    private string GetStatusBadgeClass(string status)
+    {
+        return status switch
+        {
+            "Pending" => "badge bg-warning text-dark",
+            "Completed" => "badge bg-success",
+            "Overdue" => "badge bg-danger",
+            _ => "badge bg-secondary"
+        };
     }
 }

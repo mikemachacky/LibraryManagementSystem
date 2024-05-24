@@ -1,0 +1,8 @@
+﻿@inject NavigationManager NavigationManager
+<button class="btn btn-secondary " @onclick="GoBack"><i class="bi bi-arrow-left"></i></button>
+@code {
+    void GoBack()
+    {
+        NavigationManager.NavigateTo("/adminpanel");
+    }
+}

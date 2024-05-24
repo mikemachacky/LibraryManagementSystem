@@ -12,6 +12,7 @@
     <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("publishers"))">Publishers</button>
     <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("rewievs"))">Reviews</button>
     <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("transactions"))">Transactions</button>
+    <button class="btn btn-outline-primary" @onclick="@(() => SwitchComponent("usermanagement"))">Users</button>
     </div>
     @switch (@CurrentComponent)
     {
@@ -32,6 +33,9 @@
         break;
     case "transactions":
         <Transactions />
+        break;
+    case "usermanagement":
+        <UserManagement/>
         break;
     default: break;
     }

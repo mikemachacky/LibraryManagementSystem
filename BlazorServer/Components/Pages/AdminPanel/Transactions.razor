@@ -1,7 +1,10 @@
 ﻿@page "/transactions"
 @using BlazorServer.Data
 @using BlazorServer.Model
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
 @inject IEntityService<Transaction> TransactionService
+@inject UserManager<ApplicationUser> UserManager
 @inject IJSRuntime JSRuntime
 
 <div class="container mt-2">
@@ -29,40 +32,45 @@
     }
     else
     {
-        <div class="row">
-            @foreach (var transaction in transactions)
-            {
-                <div class="col-md-4 col-sm-10 offset-md-0 offset-sm-1 mb-4 d-flex align-items-stretch">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h5 class="card-title">@transaction.Book.Title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">User: @transaction.User.UserName</h6>
-                            <h6 class="card-subtitle mb-2 text-muted">User ID: @transaction.UserID</h6>
-                            <p class="card-text">
-                                <strong>Transaction Date:</strong> @transaction.TransactionDate.ToShortDateString()<br />
-                                <strong>Due Date:</strong> @transaction.DueDate.ToShortDateString()<br />
-                                <strong>Returned Date:</strong> @(transaction.ReturnedDate.HasValue ? transaction.ReturnedDate.Value.ToShortDateString() : "Not Returned")<br />
-                                <strong>Status:</strong> <span class="badge @GetStatusBadgeClass(transaction.Status)">@transaction.Status</span>
-                            </p>
-                            <div class="d-flex justify-content-start">
-                               
-                              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Book Title</th>
+                    <th>User Email</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var transaction in transactions)
+                {
+                    var user = users.FirstOrDefault(u => u.Id == transaction.UserID.ToString());
+                    <tr>
+                        <td>@transaction.TransactionID</td>
+                        <td>@transaction.Book.Title</td>
+                        <td>@user?.Email</td> <!-- Display user email instead of ID -->
+                        <td>@transaction.DueDate.ToShortDateString()</td>
+                        <td>
+                            <span class="@GetStatusBadgeClass(transaction.Status)">
+                                @transaction.Status
+                            </span>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     }
 </div>
 
 @code {
-    private List<Transaction> transactions;
+    public List<Transaction> transactions = new();
+    private List<ApplicationUser> users = new();
 
     protected override async Task OnInitializedAsync()
     {
         transactions = await TransactionService.GetAll();
-        transactions = new List<Transaction>();
+        users = await UserManager.Users.ToListAsync();
        
     }
 

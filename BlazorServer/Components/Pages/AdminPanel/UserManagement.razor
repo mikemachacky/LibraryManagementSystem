@@ -8,6 +8,7 @@
 @rendermode InteractiveServer
 @attribute [Authorize(Policy = "AdminOnly")]
 
+<div class="container mt-4">
 <h3>User Management</h3>
 
 @if (Users == null || Roles == null)
@@ -44,7 +45,7 @@ else
         </tbody>
     </table>
 }
-
+</div>
 @code {
     public List<ApplicationUser> Users { get; set; } = new();
     public List<IdentityRole> Roles { get; set; } = new();

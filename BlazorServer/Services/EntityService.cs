@@ -1,7 +1,7 @@
-﻿using BlazorServer.Components.Pages.AdminPanel;
-using BlazorServer.Data;
+﻿using BlazorServer.Data;
 using BlazorServer.Model;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace BlazorServer.Services
 {
@@ -46,8 +46,16 @@ namespace BlazorServer.Services
                        .Include("Publisher")
                         .ToListAsync();
                 }
+            else if (typeof(T) == typeof(Transaction))
+            {
+                return await _appDbContext.Set<T>()
+                        .Include("Book")
+                        .ToListAsync();
+               
+            }
 
-                return await _appDbContext.Set<T>().ToListAsync();
+
+            return await _appDbContext.Set<T>().ToListAsync();
         }
 
         public async Task<T?> GetById(int id)
