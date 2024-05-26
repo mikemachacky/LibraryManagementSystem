@@ -182,6 +182,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEF1dGhvclBhZ2VzXEF1dGhvcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/AuthorPages/EditAuthor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEF1dGhvclBhZ2VzXEVkaXRBdXRob3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/BookPages/Books.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEJvb2tQYWdlc1xCb29rcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -190,8 +194,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEJvb2tQYWdlc1xFZGl0Qm9vay5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/Buttons/CreateBookButton.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEJ1dHRvbnNcQ3JlYXRlQm9va0J1dHRvbi5yYXpvcg==
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/Buttons/GenericCreateButton.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEJ1dHRvbnNcR2VuZXJpY0NyZWF0ZUJ1dHRvbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/Buttons/GenericDeleteButton.razor]
@@ -214,12 +218,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXEdlbnJlUGFnZXNcR2VucmVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/PublisherPages/EditPublisher.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXFB1Ymxpc2hlclBhZ2VzXEVkaXRQdWJsaXNoZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/PublisherPages/Publishers.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXFB1Ymxpc2hlclBhZ2VzXFB1Ymxpc2hlcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/ReviewPages/EditReview.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXFJldmlld1BhZ2VzXEVkaXRSZXZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/ReviewPages/Reviews.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXFJldmlld1BhZ2VzXFJldmlld3MucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/TransactionPages/EditTransaction.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblBhbmVsXFRyYW5zYWN0aW9uUGFnZXNcRWRpdFRyYW5zYWN0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/AdminPanel/TransactionPages/Transactions.razor]
@@ -238,6 +254,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRhbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/EmployeePanel.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZVBhbmVsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/EmployeeTransactions.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbXBsb3llZVRyYW5zYWN0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -254,8 +278,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xQYWdpbmF0aW9uLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/SearchBooks.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hCb29rcy5yYXpvcg==
+[C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Pages/SearchBar.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2hCYXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dom/Documents/GitHub/LibraryManagementSystem/BlazorServer/Components/Routes.razor]

@@ -1,0 +1,55 @@
+﻿@page "/edit-author"
+@page "/edit-author/{Id:int}"
+
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+
+@attribute [Authorize(Policy = "AdminOnly")]
+@rendermode InteractiveServer
+
+@inject IEntityService<Author> AuthorService
+@inject NavigationManager NavigationManager
+
+<GoBackButton />
+<div class="row col-md-6 offset-3">
+    <EditForm Model="@newAuthor" OnSubmit="HandleSubmit" FormName="editAuthor">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" @bind="newAuthor.Name"  required />
+        </div>
+        <div class="form-group">
+            <label for="bio">Bio:</label>
+            <textarea class="form-control" id="bio" @bind="newAuthor.Bio" ></textarea>
+        </div>
+        <div class="form-group">
+            <label for="nationality">Nationality:</label>
+            <input type="text" class="form-control" id="nationality" @bind="newAuthor.Nationality"  />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Author newAuthor = new Author();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id > 0)
+            newAuthor = await AuthorService.GetById(Id) ?? new Author();
+       
+    }
+
+    async Task HandleSubmit()
+    {
+        if (Id <= 0)
+            await AuthorService.Add(newAuthor);
+        else
+            await AuthorService.EditById(Id, newAuthor);
+
+        NavigationManager.NavigateTo("/adminpanel");
+    }
+}

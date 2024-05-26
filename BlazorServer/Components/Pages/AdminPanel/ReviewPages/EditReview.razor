@@ -1,0 +1,51 @@
+﻿@page "/edit-review"
+@page "/edit-review/{Id:int}"
+
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+
+@attribute [Authorize(Policy = "AdminOnly")]
+@rendermode InteractiveServer
+
+@inject IEntityService<Review> ReviewService
+@inject NavigationManager NavigationManager
+
+<GoBackButton />
+<div class="row col-md-6 offset-3">
+    <EditForm Model="@newReview" OnSubmit="HandleSubmit" FormName="editReview">
+        <div class="form-group">
+            <label for="rating">Rating:</label>
+            <input type="number" class="form-control" id="rating" @bind="newReview.Rating" min="1" max="5" required />
+        </div>
+        <div class="form-group">
+            <label for="reviewText">Review Text:</label>
+            <textarea class="form-control" id="reviewText" @bind="newReview.ReviewText"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+</div>
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Review newReview = new Review();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id > 0)
+            newReview = await ReviewService.GetById(Id) ?? new Review();
+    }
+
+    async Task HandleSubmit()
+    {
+        if (Id <= 0)
+            await ReviewService.Add(newReview);
+        else
+            await ReviewService.EditById(Id, newReview);
+
+        NavigationManager.NavigateTo("/adminpanel");
+    }
+}

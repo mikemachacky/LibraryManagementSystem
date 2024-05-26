@@ -1,0 +1,139 @@
+﻿@page "/employeepanel"
+@using BlazorServer.Data
+@using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+@rendermode InteractiveServer
+@inject IJSRuntime JSRuntime
+@inject IEntityService<ApplicationUser> UserService
+@inject IEntityService<Book> BookService
+@inject IEntityService<Transaction> TransactionService
+@inject NavigationManager NavigationManager
+
+<h3>Transaction Management</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Search User</h5>
+            <input type="text" @bind="userSearchTerm" @oninput="(async (e) => await HandleSearchUser(e))" class="form-control mb-3" />
+            <div class="list-group">
+                @foreach (var user in users)
+                {
+                    <div class="list-group-item" @onclick="() => SelectUser(user)">@user.Email</div>
+                }
+            </div>
+            @if (selectedUser != null)
+            {
+                <div class="selected-box mt-3 border border-primary p-3">
+                    <h6 class="text-primary">Selected User</h6>
+                    <div>@selectedUser.Email</div>
+                </div>
+            }
+        </div>
+        <div class="col-md-6">
+            <h5>Search Book</h5>
+            <input type="text" @bind="bookSearchTerm" @oninput="(async (e) => await HandleSearchBook(e))" class="form-control mb-3" />
+            <div class="list-group">
+                @foreach (var book in books)
+                {
+                    <div class="list-group-item" @onclick="() => SelectBook(book)">@book.Title {@book.QuantityAvailable}</div>
+                }
+            </div>
+            @if (selectedBook != null)
+            {
+                <div class="selected-box mt-3 border border-primary p-3">
+                    <h6 class="text-primary">Selected Book</h6>
+                    <div>@selectedBook.Title</div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- Submit Transaction Button -->
+    <div class="row mt-3">
+        <div class="col">
+            @if (selectedUser != null && selectedBook != null)
+            {
+                <button class="btn btn-primary" @onclick="SubmitTransaction">Submit Transaction</button>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    private List<ApplicationUser> users = new List<ApplicationUser>();
+    private List<Book> books = new List<Book>();
+    private ApplicationUser selectedUser;
+    private Book selectedBook;
+    private string userSearchTerm = "";
+    private string bookSearchTerm = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        users = await UserService.GetAll();
+        books = await BookService.GetAll();
+    }
+
+    private void SelectUser(ApplicationUser user)
+    {
+        selectedUser = user;
+    }
+
+    private void SelectBook(Book book)
+    {
+        selectedBook = book;
+    }
+
+    private async Task SubmitTransaction()
+    {
+        if (selectedBook.QuantityAvailable > 0)
+        {
+            selectedBook.QuantityAvailable--;
+            await BookService.EditById(selectedBook.BookID, selectedBook);
+            DateTime returnDate = DateTime.Today.AddDays(14);
+
+            Transaction transaction = new Transaction
+                {
+                    UserID = selectedUser.Id,
+                    BookID = selectedBook.BookID,
+                    TransactionDate = DateTime.Today,
+                    DueDate = returnDate,
+                    Status = "Pending"
+                };
+
+            await TransactionService.Add(transaction);
+        }
+        else
+            {
+                await JSRuntime.InvokeVoidAsync("alert", $"The book {selectedBook} is not avaliable.");
+            }
+        selectedUser = null;
+        selectedBook = null;
+       
+    }
+
+    private async Task HandleSearchUser(ChangeEventArgs e)
+    {
+        userSearchTerm = e.Value?.ToString();
+        if (string.IsNullOrWhiteSpace(userSearchTerm))
+        {
+            users = await UserService.GetAll();
+        }
+        else
+        {
+            users = users.Where(u => u.Email.ToLower().Contains(userSearchTerm.ToLower())).ToList();
+        }
+
+    }
+
+    private async Task HandleSearchBook(ChangeEventArgs e)
+    {
+        bookSearchTerm = e.Value?.ToString();
+        if (string.IsNullOrWhiteSpace(bookSearchTerm))
+        {
+            books = await BookService.GetAll();
+        }
+        else
+        {
+            books = books.Where(b => b.Title.ToLower().Contains(bookSearchTerm.ToLower())).ToList();
+        }
+    }
+}

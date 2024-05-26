@@ -1,0 +1,16 @@
+﻿
+@if (ShowSearch)
+{
+    <input type="text" @bind-value="SearchTerm" @bind-value:event="oninput" placeholder="Search..." class="form-control" />
+}
+
+@code {
+    [Parameter]
+    public string SearchTerm { get; set; }
+
+    [Parameter]
+    public bool ShowSearch { get; set; } = true;
+
+    [Parameter]
+    public EventCallback<string> SearchTermChanged { get; set; }
+}

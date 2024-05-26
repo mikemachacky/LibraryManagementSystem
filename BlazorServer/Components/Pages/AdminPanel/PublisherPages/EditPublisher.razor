@@ -1,0 +1,47 @@
+﻿@page "/edit-publisher"
+@page "/edit-publisher/{id:int}"
+
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+
+@attribute [Authorize(Policy = "AdminOnly")]
+@rendermode InteractiveServer
+
+@inject IEntityService<Publisher> PublisherService
+@inject NavigationManager NavigationManager
+<div class="row col-md-6 offset-3">
+<GoBackButton/>
+<EditForm Model="@newPublisher" OnSubmit="HandleSubmit" FormName="editPublisher">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" @bind="newPublisher.Name" required />
+    </div>
+    <div class="form-group">
+        <label for="Description">Description:</label>
+        <input type="text" class="form-control" id="description" @bind="newPublisher.Description" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
+</div>
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Publisher newPublisher = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id > 0)
+            newPublisher = await PublisherService.GetById(Id) ?? new();
+    }
+    async Task HandleSubmit()
+    {
+        if (Id <= 0)
+            await PublisherService.Add(newPublisher);
+        else
+            await PublisherService.EditById(Id, newPublisher);
+
+        NavigationManager.NavigateTo("/adminpanel");
+    }
+}

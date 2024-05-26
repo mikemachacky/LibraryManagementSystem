@@ -1,0 +1,58 @@
+﻿@page "/edit-transaction"
+@page "/edit-transaction/{Id:int}"
+
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+
+@attribute [Authorize(Policy = "AdminOnly")]
+@rendermode InteractiveServer
+
+@inject IEntityService<Transaction> TransactionService
+@inject NavigationManager NavigationManager
+
+<GoBackButton />
+<div class="row col-md-6 offset-3">
+    <EditForm Model="@newTransaction" OnSubmit="HandleSubmit" FormName="editTransaction">
+        <div class="form-group">
+            <label for="transactionDate">Transaction Date:</label>
+            <input type="date" class="form-control" id="transactionDate" @bind="newTransaction.TransactionDate" required />
+        </div>
+        <div class="form-group">
+            <label for="dueDate">Due Date:</label>
+            <input type="date" class="form-control" id="dueDate" @bind="newTransaction.DueDate" required />
+        </div>
+        <div class="form-group">
+            <label for="returnedDate">Returned Date:</label>
+            <input type="date" class="form-control" id="returnedDate" @bind="newTransaction.ReturnedDate" />
+        </div>
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <input type="text" class="form-control" id="status" @bind="newTransaction.Status" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Transaction newTransaction = new Transaction();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (Id > 0)
+            newTransaction = await TransactionService.GetById(Id) ?? new Transaction();
+    }
+
+    async Task HandleSubmit()
+    {
+        if (Id <= 0)
+            await TransactionService.Add(newTransaction);
+        else
+            await TransactionService.EditById(Id, newTransaction);
+
+        NavigationManager.NavigateTo("/adminpanel");
+    }
+}

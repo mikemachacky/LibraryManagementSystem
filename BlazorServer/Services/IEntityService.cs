@@ -7,6 +7,7 @@
         Task<T?> GetById(int id);
         Task<T> EditById(int id, object obj);
         Task Remove(int id);
+        Task<List<T>> Search(string searchTerm);
         Task<List<T>> GetPaged(int page, int pageSize);
         Task<List<T>?> GetByUserId(string userId);
     }

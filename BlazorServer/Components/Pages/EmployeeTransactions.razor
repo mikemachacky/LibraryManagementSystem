@@ -1,0 +1,143 @@
+﻿@page "/employeetransactions"
+@using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+@rendermode InteractiveServer
+@inject IEntityService<Transaction> TransactionService
+@inject IEntityService<Book> BookService
+@inject NavigationManager NavigationManager
+
+<h3>Employee Transactions</h3>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" @bind="searchTerm" @oninput="(async (e) => await HandleSearch(e))" class="form-control mb-3" placeholder="Search by user or book title..." />
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>User Email</th>
+                        <th>Book Title</th>
+                        <th>Transaction Date</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in pagedTransactions)
+                    {
+                        <tr>
+                            <td>@transaction.User.Email</td>
+                            <td>@transaction.Book.Title</td>
+                            <td>@transaction.TransactionDate.ToShortDateString()</td>
+                            <td>@transaction.DueDate.ToShortDateString()</td>
+                            <td>
+                                <span class="@GetStatusBadgeClass(transaction.Status)">
+                                    @transaction.Status
+                                </span>
+                            </td>
+                            <td>
+                                @if (transaction.Status == "Pending")
+                                {
+                                    <button class="btn btn-primary" @onclick="() => ReturnBook(transaction)">Return</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Pagination -->
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <Pagination TotalPages="TotalPages" CurrentPage="CurrentPage" PageChanged="OnPageChanged" />
+        </div>
+    </div>
+</div>
+
+@code {
+    private string searchTerm = "";
+    private List<Transaction> transactions = new List<Transaction>();
+    private List<Transaction> pagedTransactions = new List<Transaction>();
+
+    public int CurrentPage { get; set; } = 1;
+    private int pageSize = 5;
+    public int TotalPages { get; set; } = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTransactions();
+    }
+
+    private async Task LoadTransactions()
+    {
+        transactions = await TransactionService.GetAll();
+        await ApplyFiltersAndPagination();
+    }
+
+    private async Task ApplyFiltersAndPagination()
+    {
+        var filteredTransactions = transactions;
+
+        if (!string.IsNullOrWhiteSpace(searchTerm))
+        {
+            filteredTransactions = transactions.Where(t =>
+                t.User.Email.ToLower().Contains(searchTerm.ToLower()) ||
+                t.Book.Title.ToLower().Contains(searchTerm.ToLower())
+            ).ToList();
+        }
+
+        TotalPages = (int)Math.Ceiling((decimal)filteredTransactions.Count / pageSize);
+        int startIndex = (CurrentPage - 1) * pageSize;
+        pagedTransactions = filteredTransactions.Skip(startIndex).Take(pageSize).ToList();
+    }
+
+    private async Task OnPageChanged(int page)
+    {
+        CurrentPage = page;
+        await ApplyFiltersAndPagination();
+    }
+
+    private async Task HandleSearch(ChangeEventArgs e)
+    {
+        searchTerm = e.Value?.ToString();
+        CurrentPage = 1;
+        await ApplyFiltersAndPagination();
+    }
+
+    private string GetStatusBadgeClass(string status)
+    {
+        return status switch
+        {
+            "Pending" => "badge bg-warning text-dark",
+            "Completed" => "badge bg-success",
+            "Overdue" => "badge bg-danger",
+            _ => "badge bg-secondary"
+        };
+    }
+
+    private async Task ReturnBook(Transaction transaction)
+    {
+        var transactionToUpdate = await TransactionService.GetById(transaction.TransactionID);
+        var bookToUpdate = await BookService.GetById(transaction.BookID);
+        if (transactionToUpdate != null && bookToUpdate != null)
+        {
+            bookToUpdate.QuantityAvailable++;
+            await BookService.EditById(bookToUpdate.BookID, bookToUpdate);
+
+            transactionToUpdate.ReturnedDate = DateTime.Today;
+            transactionToUpdate.Status = "Completed";
+
+            await TransactionService.EditById(transactionToUpdate.TransactionID, transactionToUpdate);
+
+            await LoadTransactions();
+        }
+        else
+        {
+            Console.WriteLine("Transaction not found.");
+        }
+    }
+}

@@ -10,11 +10,11 @@
 
 <div class="row col-md-6 offset-3">
     <GoBackButton/>
-    <h3>EditGenre</h3>
+ 
     <EditForm Model="@newGenre" OnSubmit="HandleSubmit" FormName="editGenre">
         <div class="form-group">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" id="title" @bind="newGenre.Name" required />
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" @bind="newGenre.Name" required />
         </div>
         <button type="submit" class="btn btn-primary">Save</button>
     </EditForm>

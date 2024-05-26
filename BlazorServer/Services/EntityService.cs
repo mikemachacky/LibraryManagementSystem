@@ -46,13 +46,14 @@ namespace BlazorServer.Services
                        .Include("Publisher")
                         .ToListAsync();
                 }
-            else if (typeof(T) == typeof(Transaction))
-            {
-                return await _appDbContext.Set<T>()
+                else if (typeof(T) == typeof(Transaction))
+                {
+                    return await _appDbContext.Set<T>()
                         .Include("Book")
+                        .Include("User")
                         .ToListAsync();
-               
-            }
+                }
+
 
 
             return await _appDbContext.Set<T>().ToListAsync();
@@ -69,6 +70,11 @@ namespace BlazorServer.Services
                                     .FirstOrDefaultAsync(b => b.BookID == id);
 
                 return book as T;
+            }
+            else if (typeof(T) == typeof(Author))
+            {
+                var author = await _appDbContext.Set<Author>().FirstOrDefaultAsync(a => a.AuthorID == id);
+                return author as T;
             }
             var result = await _appDbContext.Set<T>().FindAsync(id);
 
@@ -101,6 +107,26 @@ namespace BlazorServer.Services
                 _appDbContext.Set<T>().Remove(entity);
                 await _appDbContext.SaveChangesAsync();
             }
+        }
+
+        public async Task<List<T>> Search(string searchTerm)
+        {
+            // Implement search logic based on the entity type T
+            if (typeof(T) == typeof(Book))
+            {
+                return await _appDbContext.Set<Book>()
+                                          .Where(b => b.Title.Contains(searchTerm) || b.Author.Name.Contains(searchTerm))
+                                          .Cast<T>()
+                                          .ToListAsync();
+            }
+            else if (typeof(T) == typeof(Author))
+            {
+                return await _appDbContext.Set<Author>()
+                                          .Where(a => a.Name.Contains(searchTerm) || a.Nationality.Contains(searchTerm))
+                                          .Cast<T>()
+                                          .ToListAsync();
+            }
+            return new List<T>();
         }
     }
 }
