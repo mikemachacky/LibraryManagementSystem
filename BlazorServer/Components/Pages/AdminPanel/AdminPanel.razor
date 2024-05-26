@@ -1,7 +1,14 @@
 ﻿@page "/adminpanel"
 @using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Components.Pages.AdminPanel.BookPages
+@using BlazorServer.Components.Pages.AdminPanel.GenrePages
+@using BlazorServer.Components.Pages.AdminPanel.PublisherPages
+@using BlazorServer.Components.Pages.AdminPanel.ReviewPages
+@using BlazorServer.Components.Pages.AdminPanel.TransactionPages
+@using BlazorServer.Components.Pages.AdminPanel.AuthorPages
 @rendermode InteractiveServer
 @attribute [Authorize(Policy = "AdminOnly")]
+
 
 @inject NavigationManager NavigationManager
 

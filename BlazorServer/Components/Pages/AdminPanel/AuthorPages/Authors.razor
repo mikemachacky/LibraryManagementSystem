@@ -1,6 +1,7 @@
 ﻿@page "/authors"
 @using BlazorServer.Model
 @using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
 @attribute [Authorize(Policy = "AdminOnly")]
 @rendermode InteractiveServer
 @inject IEntityService<Author> AuthorService
@@ -28,12 +29,9 @@
                                 <strong>Bio:</strong> @author.Bio
                             </p>
                             <div class="d-flex justify-content-start">
-                                <button class="btn btn-primary me-2">
-                                    <i class="bi bi-pencil-square"></i>
-                                </button>
-                                <button class="btn btn-danger">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <GenericEditButton TEntity="Author" Id="@author.AuthorID" EditUrlPattern="/edit-author/{0}" />
+                                <span class="m-1"></span>
+                                <GenericDeleteButton TEntity="Author" Id="@author.AuthorID" />
                             </div>
                         </div>
                     </div>

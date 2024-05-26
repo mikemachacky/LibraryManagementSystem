@@ -1,5 +1,6 @@
 ﻿@page "/books"
 @using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
 @rendermode InteractiveServer
 @attribute [Authorize(Policy = "AdminOnly")]
 @inject IEntityService<Book> BookService
@@ -49,9 +50,9 @@
                                 <strong>Description:</strong> @book.Description
                             </p>
                             <div class="d-flex justify-content-start">
-                                <EditBookButton Id="@book.BookID" />
+                               <GenericEditButton TEntity="Book" Id="@book.BookID" EditUrlPattern="/edit-book/{0}" />
                                 <span class="m-1"></span>
-                                <RemoveBookButton Id="@book.BookID" />
+                               <GenericDeleteButton TEntity="Book" Id="@book.BookID" />
                             </div>
                         </div>
                     </div>

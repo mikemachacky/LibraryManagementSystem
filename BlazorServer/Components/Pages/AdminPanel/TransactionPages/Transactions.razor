@@ -3,6 +3,10 @@
 @using BlazorServer.Model
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.EntityFrameworkCore
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+@attribute [Authorize(Policy = "AdminOnly")]
 @inject IEntityService<Transaction> TransactionService
 @inject UserManager<ApplicationUser> UserManager
 @inject IJSRuntime JSRuntime
@@ -74,16 +78,7 @@
        
     }
 
-    private async Task RemoveTransaction(int transactionID)
-    {
-        var success = await TransactionService.Remove(transactionID);
-        if (success)
-        {
-            transactions = await TransactionService.GetAll();
-
-        }
-    }
-
+  
    
     private string GetStatusBadgeClass(string status)
     {

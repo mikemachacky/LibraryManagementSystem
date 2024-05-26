@@ -2,6 +2,7 @@
 @page "/edit-book/{id:int}"
 @using Microsoft.AspNetCore.Authorization
 @using BlazorServer.Model
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
 @attribute [Authorize(Policy = "AdminOnly")]
 @rendermode InteractiveServer
 @inject NavigationManager NavigationManager
@@ -114,7 +115,7 @@
         genres = await GenreService.GetAll();
         publishers = await PublisherService.GetAll();
         if(Id>0)
-            newBook = await BookService.GetById(Id);
+            newBook = await BookService.GetById(Id) ?? new();
     }
     async Task HandleSubmit()
     {

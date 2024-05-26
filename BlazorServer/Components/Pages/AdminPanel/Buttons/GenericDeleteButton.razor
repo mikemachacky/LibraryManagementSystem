@@ -1,4 +1,6 @@
-﻿@inject IEntityService<Book> BookService
+﻿@typeparam TEntity where TEntity : class
+
+@inject IEntityService<TEntity> EntityService
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
 <button class="btn btn-danger" @onclick="() =>Remove()"><i class="bi bi-trash"/></button>
@@ -16,16 +18,14 @@
                 bool isConfirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Are you sure you want to delete?");
                 if (isConfirmed)
                 {
-                    await BookService.Remove(Id);
+                    await EntityService.Remove(Id);
                     NavigationManager.NavigateTo(NavigationManager.Uri, forceLoad: true);
                 }
-                
             }
-          
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error removing book: {ex.Message}");
+            Console.WriteLine($"Error removing entity: {ex.Message}");
         }
     }
 }

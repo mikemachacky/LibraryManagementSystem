@@ -2,6 +2,10 @@
 @using BlazorServer.Model
 @inject IEntityService<Review> ReviewService
 @inject IJSRuntime JSRuntime
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+@attribute [Authorize(Policy = "AdminOnly")]
 
 <div class="container mt-2">
     <div class="row mb-3">
@@ -43,10 +47,9 @@
                                 <strong>Review Date:</strong> @review.ReviewDate.ToShortDateString()
                             </p>
                             <div class="d-flex justify-content-start">
-                              
-                                <button class="btn btn-danger" @onclick="() => ConfirmRemoveReview(review.ReviewID)">
-                                    <i class="bi bi-trash"></i>
-                                </button>
+                                <GenericEditButton TEntity="Review" Id="@review.ReviewID" EditUrlPattern="/edit-review/{0}" />
+                                <span class="m-1"></span>
+                                <GenericDeleteButton TEntity="Review" Id="@review.ReviewID" />
                             </div>
                         </div>
                     </div>
@@ -62,24 +65,5 @@
     protected override async Task OnInitializedAsync()
     {
         reviews = await ReviewService.GetAll();
-    }
-
-    private async Task RemoveReview(int reviewID)
-    {
-        var success = await ReviewService.Remove(reviewID);
-        if (success)
-        {
-            reviews = await ReviewService.GetAll();
-            StateHasChanged();
-        }
-    }
-
-    private async Task ConfirmRemoveReview(int reviewID)
-    {
-        bool isConfirmed = await JSRuntime.InvokeAsync<bool>("confirm", $"Are you sure you want to delete review {reviewID}?");
-        if (isConfirmed)
-        {
-            await RemoveReview(reviewID);
-        }
     }
 }

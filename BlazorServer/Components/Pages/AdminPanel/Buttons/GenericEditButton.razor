@@ -1,0 +1,19 @@
+﻿@typeparam TEntity where TEntity : class
+
+@inject NavigationManager NavigationManager
+
+<button class="btn btn-primary" @onclick="Edit"><i class="bi bi-pencil-square"></i></button>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [Parameter]
+    public string EditUrlPattern { get; set; }
+
+    void Edit()
+    {
+        var url = string.Format(EditUrlPattern, Id);
+        NavigationManager.NavigateTo(url);
+    }
+}

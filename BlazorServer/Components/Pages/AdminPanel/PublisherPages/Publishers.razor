@@ -1,6 +1,11 @@
 ﻿@page "/publishers"
 @using BlazorServer.Model
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
+@using BlazorServer.Components.Pages.AdminPanel.Buttons
+@attribute [Authorize(Policy = "AdminOnly")]
 @inject IEntityService<Publisher> PublisherService
+
 
 <div class="container mt-2">
     <div class="row mb-3">
@@ -40,7 +45,9 @@
                                 <strong>Description:</strong> @publisher.Description
                             </p>
                             <div class="d-flex justify-content-start">
-                              
+                                <GenericEditButton TEntity="Publisher" Id="@publisher.PublisherID" EditUrlPattern="/edit-publisher/{0}" />
+                                <span class="m-1"></span>
+                                <GenericDeleteButton TEntity="Book" Id="@publisher.PublisherID" />
                             </div>
                         </div>
                     </div>
