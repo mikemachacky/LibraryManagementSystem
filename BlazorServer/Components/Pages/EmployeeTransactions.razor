@@ -1,7 +1,9 @@
 ﻿@page "/employeetransactions"
 @using BlazorServer.Model
 @using BlazorServer.Components.Pages.AdminPanel.Buttons
+@using Microsoft.AspNetCore.Authorization
 @rendermode InteractiveServer
+@attribute [Authorize]
 @inject IEntityService<Transaction> TransactionService
 @inject IEntityService<Book> BookService
 @inject NavigationManager NavigationManager

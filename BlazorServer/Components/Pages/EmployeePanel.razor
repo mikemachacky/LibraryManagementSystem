@@ -2,7 +2,9 @@
 @using BlazorServer.Data
 @using BlazorServer.Model
 @using BlazorServer.Components.Pages.AdminPanel.Buttons
+@using Microsoft.AspNetCore.Authorization
 @rendermode InteractiveServer
+@attribute [Authorize]
 @inject IJSRuntime JSRuntime
 @inject IEntityService<ApplicationUser> UserService
 @inject IEntityService<Book> BookService
