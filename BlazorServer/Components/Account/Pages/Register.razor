@@ -79,7 +79,7 @@
                 await RoleManager.CreateAsync(new IdentityRole("User"));
             }
 
-            // Assign the User role
+          
             await UserManager.AddToRoleAsync(user, "User");
 
             await SignInManager.SignInAsync(user, isPersistent: false);

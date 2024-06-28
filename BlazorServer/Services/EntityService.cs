@@ -111,7 +111,6 @@ namespace BlazorServer.Services
 
         public async Task<List<T>> Search(string searchTerm)
         {
-            // Implement search logic based on the entity type T
             if (typeof(T) == typeof(Book))
             {
                 return await _appDbContext.Set<Book>()

@@ -50,6 +50,7 @@
                                 <strong>Publish Date:</strong> @book.PublishDate.ToShortDateString()<br />
                                 <strong>Quantity Available:</strong> @book.QuantityAvailable<br />
                                 <strong>Description:</strong> @book.Description
+                                <button class="btn btn-primary" @onclick="()=>RedirectToBookDetails(book.BookID)">See more</button>
                             </p>
                            
                         
@@ -70,7 +71,9 @@
 
 @code {
     private List<Book> books;
-    private List<Book> pagedBooks;
+    private List<Book> pagedBooks; 
+    [Parameter]
+    public int Id { get; set; }
     public string SearchTerm= null;
     public int CurrentPage { get; set; } = 1;
     private int pageSize = 3;
@@ -108,5 +111,8 @@
         }
         await LoadBooks();
     }
-
+    private void RedirectToBookDetails(int Id)
+    {
+        NavigationManager.NavigateTo($"/bookdetails/{Id}");
+    }
 }
